@@ -8,9 +8,9 @@ import { RootState } from "@/store";
 
 export const UsersList = () => {
   const filter = useSelector((state: RootState) => state.filter.filter);
+
   const { data, isLoading } = useGetUsersQuery(filter, {});
 
-  console.log(data);
   if (isLoading) return <Spinner />;
   return (
     <div>
