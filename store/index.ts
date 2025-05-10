@@ -1,9 +1,11 @@
 "use client";
 import { combineReducers, configureStore, Middleware } from "@reduxjs/toolkit";
 import { usersService } from "./users/usersService";
+import filterReducer from "./filter/filterSlice";
 
 const rootReducer = combineReducers({
   [usersService.reducerPath]: usersService.reducer,
+  filter: filterReducer,
 });
 
 const makeStore = () => {
