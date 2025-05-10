@@ -41,10 +41,7 @@ const SelectField = <T extends FieldValues>({
         <FormItem>
           <FormLabel>{label}</FormLabel>
           <FormMessage className="text-sm font-medium leading-none" />
-          <Select
-            onValueChange={field.onChange}
-            defaultValue={field.value || ""}
-          >
+          <Select value={field.value || ""} onValueChange={field.onChange}>
             <FormControl>
               <SelectTrigger className="w-full ">
                 <SelectValue

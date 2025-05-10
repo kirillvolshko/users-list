@@ -32,8 +32,8 @@ const FilterForm = ({ users }: { users: IUsersResponse[] }) => {
   }, [value, dispatch]);
 
   const handleReset = () => {
-    form.reset({ name: "" });
     dispatch(resetUserFilter());
+    form.reset({ name: "" });
   };
 
   const usersOptions =
@@ -53,7 +53,11 @@ const FilterForm = ({ users }: { users: IUsersResponse[] }) => {
             placeholder="Select user name"
             options={usersOptions}
           />
-          <Button type="button" onClick={handleReset} className="mb-2">
+          <Button
+            type="button"
+            onClick={handleReset}
+            className="mb-2 hover:cursor-pointer"
+          >
             Reset Filter
           </Button>
         </form>
